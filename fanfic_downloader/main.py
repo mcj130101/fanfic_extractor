@@ -67,13 +67,14 @@ def show_app_header():
     console.print(header)
 
 
-def run_fanficfare(args: List[str], hide_console: bool = True) -> subprocess.CompletedProcess:
+def run_fanficfare(args: List[str], hide_console: bool = True, working_dir: str = None) -> subprocess.CompletedProcess:
     """
     Run the fanficfare command with the given arguments.
 
     Args:
         args: List of arguments to pass to fanficfare
         hide_console: Whether to hide the console window on Windows
+        working_dir: Directory to run the command from (None = current directory)
 
     Returns:
         CompletedProcess object with the result
@@ -91,14 +92,14 @@ def run_fanficfare(args: List[str], hide_console: bool = True) -> subprocess.Com
             capture_output=True,
             text=True,
             check=False,
-            startupinfo=startupinfo
+            startupinfo=startupinfo,
+            cwd=working_dir  # This is the key parameter that sets the working directory
         )
         return result
     except FileNotFoundError:
         console.print("[bold red]Error:[/bold red] FanFicFare not found. Please install it with:")
         console.print("[yellow]pip install fanficfare[/yellow]")
         sys.exit(1)
-
 
 def load_urls_from_file(file_path: str) -> List[str]:
     """Load URLs from a text file, one URL per line"""
@@ -165,7 +166,7 @@ def perform_download(urls_list, output_folder=None):
 
             try:
                 # Run FanFicFare to download the story
-                result = run_fanficfare(["-o", "is_adult=true", "-u", url, "-o", f"output_filename={filepath}"])
+                result = run_fanficfare(["-o", "is_adult=true", "-u", url], working_dir=target_folder)
 
                 if result.returncode == 0:
                     success_count += 1
