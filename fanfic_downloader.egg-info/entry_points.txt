@@ -1,0 +1,2 @@
+[console_scripts]
+fanfic = fanfic_downloader.main:run
