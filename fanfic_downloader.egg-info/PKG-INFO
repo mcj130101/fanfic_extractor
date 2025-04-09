@@ -1,11 +1,11 @@
 Metadata-Version: 2.4
 Name: fanfic-downloader
-Version: 0.2.2
+Version: 0.2.5
 Summary: Download fan fiction stories from various sites
-Author-email: Munish chandra jha <mcj130101@gmail.com>
+Author-email: Munish Chandra Jha <mcj130101@gmail.com>
 License: MIT
-Project-URL: Homepage, https://github.com/mcj13010/fanfic-downloader
-Project-URL: Bug Tracker, https://github.com/mcj130101/fanfic-downloader/issues
+Project-URL: Homepage, https://github.com/mcj130101/fanfic_extractor
+Project-URL: Bug Tracker, https://github.com/mcj130101/fanfic_extractor/issues
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fanfic-downloader"
+version = "0.2.5"
+description = "Download fan fiction stories from various sites"
+readme = "README.md"
+authors = [{name = "Munish Chandra Jha", email = "mcj130101@gmail.com"}]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "fanficfare>=4.0.0",
+]
+requires-python = ">=3.7"
+
+[project.urls]
+"Homepage" = "https://github.com/mcj130101/fanfic_extractor"
+"Bug Tracker" = "https://github.com/mcj130101/fanfic_extractor/issues"
+
+[project.scripts]
+fanfic = "fanfic_downloader.main:run"
