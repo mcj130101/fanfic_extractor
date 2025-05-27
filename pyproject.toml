@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fanfic-downloader"
-version = "0.2.5"
+version = "0.2.6"
 description = "Download fan fiction stories from various sites"
 readme = "README.md"
 authors = [{name = "Munish Chandra Jha", email = "mcj130101@gmail.com"}]

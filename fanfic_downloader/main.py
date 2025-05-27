@@ -30,8 +30,28 @@ app = typer.Typer(
 # Initialize Rich console
 console = Console()
 
+
+# Configuration directory and file setup
+def get_config_dir():
+    """Get the appropriate config directory based on the operating system."""
+    if sys.platform == 'win32':
+        # Windows: Use AppData\Roaming
+        config_dir = os.path.join(os.environ.get('APPDATA', os.path.expanduser('~')), 'FanFicDownloader')
+    elif sys.platform == 'darwin':
+        # macOS: Use ~/Library/Application Support
+        config_dir = os.path.join(os.path.expanduser('~'), 'Library', 'Application Support', 'FanFicDownloader')
+    else:
+        # Linux/Unix: Use ~/.config
+        config_dir = os.path.join(os.environ.get('XDG_CONFIG_HOME', os.path.expanduser('~/.config')),
+                                  'FanFicDownloader')
+
+    # Create config directory if it doesn't exist
+    os.makedirs(config_dir, exist_ok=True)
+    return config_dir
+
 # Configuration file to store settings
-CONFIG_FILE = "config.txt"
+CONFIG_DIR = get_config_dir()
+CONFIG_FILE = os.path.join(CONFIG_DIR, "config.txt")
 DEFAULT_DOWNLOAD_FOLDER = os.path.join(os.path.expanduser("~"), "FanFicDownloads")
 
 
