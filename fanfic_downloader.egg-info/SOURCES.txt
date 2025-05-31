@@ -3,7 +3,6 @@ README.md
 pyproject.toml
 setup.py
 fanfic_downloader/__init__.py
-fanfic_downloader/config.py
 fanfic_downloader/main.py
 fanfic_downloader.egg-info/PKG-INFO
 fanfic_downloader.egg-info/SOURCES.txt

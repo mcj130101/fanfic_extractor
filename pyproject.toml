@@ -4,15 +4,18 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fanfic-downloader"
-version = "0.2.6"
+version = "0.3.1"
 description = "Download fan fiction stories from various sites"
 readme = "README.md"
 authors = [{name = "Munish Chandra Jha", email = "mcj130101@gmail.com"}]
 license = {text = "MIT"}
+keywords = ["fanfiction", "cli", "downloader", "fanficfare", "epub"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: MIT License", # Or your chosen license
     "Operating System :: OS Independent",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
 ]
 dependencies = [
     "typer>=0.9.0",
